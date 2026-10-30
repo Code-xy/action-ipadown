@@ -50,6 +50,7 @@ jobs:
 
       - name: fetch-unpackers
         shell: pwsh
+        timeout-minutes: 6
         run: |
           $ProgressPreference='SilentlyContinue'
           curl.exe -L --retry 5 --retry-delay 5 -o pe-sieve64.exe      https://github.com/hasherezade/pe-sieve/releases/latest/download/pe-sieve64.exe
@@ -58,10 +59,19 @@ jobs:
 
       - name: run-and-dump
         shell: pwsh
+        timeout-minutes: 12
         run: |
           if (Test-Path work\target.exe) { $exe = (Resolve-Path work\target.exe).Path } else { $exe = (Get-ChildItem work\*.exe | Select-Object -First 1).FullName }
           Write-Host "target = $exe"
-          .\tools\dump.ps1 -Exe $exe -Out out -Pesieve ".\pe-sieve64.exe" -Seconds 90 *>&1 | Tee-Object -FilePath dump_log.txt
+          $das = @('-NoProfile','-ExecutionPolicy','Bypass','-File','.\tools\dump.ps1','-Exe',$exe,'-Out','out','-Seconds','60')
+          if (Test-Path .\pe-sieve64.exe) { $das += @('-Pesieve','.\pe-sieve64.exe') }
+          $p = Start-Process pwsh -ArgumentList $das -PassThru -NoNewWindow -RedirectStandardOutput dump_log.txt -RedirectStandardError dump_err.txt
+          Write-Host "dumper pid=$($p.Id) (hard cap 480s)"
+          try { $p | Wait-Process -Timeout 480 -ErrorAction Stop } catch { Write-Host "dumper STILL RUNNING after 480s -> force kill" }
+          if (-not $p.HasExited) { Stop-Process -Id $p.Id -Force -ErrorAction SilentlyContinue }
+          Write-Host "dumper exit=$($p.ExitCode)"
+          Get-Content dump_log.txt -ErrorAction SilentlyContinue | Select-Object -Last 120
+          Get-Content dump_err.txt  -ErrorAction SilentlyContinue | Select-Object -Last 40
           "== dump files ==" | Out-File out\summary.txt -Encoding utf8
           Get-ChildItem -Recurse out -File | ForEach-Object {
             $fs=[IO.File]::OpenRead($_.FullName); $b=New-Object byte[] 32
@@ -71,6 +81,7 @@ jobs:
 
       - name: hollows-hunter-scan
         shell: pwsh
+        timeout-minutes: 8
         continue-on-error: true
         run: |
           New-Item -ItemType Directory -Force -Path out\hh | Out-Null
