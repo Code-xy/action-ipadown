@@ -1,0 +1,432 @@
+[31;1mAdd-Type: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:13[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m  13 | [0m [36;1mAdd-Type -TypeDefinition @"[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m ~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1m(91,16): error CS0103: The name 'Encoding' does not exist in the current context     byte[] p =[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m[31;1m[36;1m     | [31;1mEncoding.ASCII.GetBytes(s);                ^[0m
+[31;1mAdd-Type: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:13[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m  13 | [0m [36;1mAdd-Type -TypeDefinition @"[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m ~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1m(113,18): error CS0246: The type or namespace name 'StringBuilder' could not be found (are you missing a using[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m[31;1m[36;1m     | [31;1mdirective or an assembly reference?)     var sb = new StringBuilder();                  ^[0m
+[31;1mAdd-Type: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:13[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m  13 | [0m [36;1mAdd-Type -TypeDefinition @"[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m ~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mCannot add type. Compilation errors occurred.[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:171[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 171 | [0m if (-not [36;1m[Dumper][0m::Open($target)) {[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m          ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:175[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 175 | [0m [36;1m[Dumper][0m::Reset()[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:185[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 185 | [0m   $r = [36;1m[Dumper][0m::Scan($Out, 67108864)[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m        ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:187[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 187 | [0m   [36;1mWrite-Host ("-- round {0}: {1}" -f $round, ($r.Trim() -replace "`r?[0m …[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mYou cannot call a method on a null-valued expression.[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:185[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 185 | [0m   $r = [36;1m[Dumper][0m::Scan($Out, 67108864)[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m        ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:187[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 187 | [0m   [36;1mWrite-Host ("-- round {0}: {1}" -f $round, ($r.Trim() -replace "`r?[0m …[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mYou cannot call a method on a null-valued expression.[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:185[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 185 | [0m   $r = [36;1m[Dumper][0m::Scan($Out, 67108864)[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m        ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:187[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 187 | [0m   [36;1mWrite-Host ("-- round {0}: {1}" -f $round, ($r.Trim() -replace "`r?[0m …[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mYou cannot call a method on a null-valued expression.[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:185[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 185 | [0m   $r = [36;1m[Dumper][0m::Scan($Out, 67108864)[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m        ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:187[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 187 | [0m   [36;1mWrite-Host ("-- round {0}: {1}" -f $round, ($r.Trim() -replace "`r?[0m …[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mYou cannot call a method on a null-valued expression.[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:185[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 185 | [0m   $r = [36;1m[Dumper][0m::Scan($Out, 67108864)[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m        ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:187[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 187 | [0m   [36;1mWrite-Host ("-- round {0}: {1}" -f $round, ($r.Trim() -replace "`r?[0m …[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mYou cannot call a method on a null-valued expression.[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:185[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 185 | [0m   $r = [36;1m[Dumper][0m::Scan($Out, 67108864)[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m        ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:187[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 187 | [0m   [36;1mWrite-Host ("-- round {0}: {1}" -f $round, ($r.Trim() -replace "`r?[0m …[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mYou cannot call a method on a null-valued expression.[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:185[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 185 | [0m   $r = [36;1m[Dumper][0m::Scan($Out, 67108864)[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m        ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:187[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 187 | [0m   [36;1mWrite-Host ("-- round {0}: {1}" -f $round, ($r.Trim() -replace "`r?[0m …[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mYou cannot call a method on a null-valued expression.[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:185[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 185 | [0m   $r = [36;1m[Dumper][0m::Scan($Out, 67108864)[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m        ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:187[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 187 | [0m   [36;1mWrite-Host ("-- round {0}: {1}" -f $round, ($r.Trim() -replace "`r?[0m …[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mYou cannot call a method on a null-valued expression.[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:185[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 185 | [0m   $r = [36;1m[Dumper][0m::Scan($Out, 67108864)[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m        ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:187[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 187 | [0m   [36;1mWrite-Host ("-- round {0}: {1}" -f $round, ($r.Trim() -replace "`r?[0m …[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mYou cannot call a method on a null-valued expression.[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:185[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 185 | [0m   $r = [36;1m[Dumper][0m::Scan($Out, 67108864)[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m        ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:187[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 187 | [0m   [36;1mWrite-Host ("-- round {0}: {1}" -f $round, ($r.Trim() -replace "`r?[0m …[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mYou cannot call a method on a null-valued expression.[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:185[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 185 | [0m   $r = [36;1m[Dumper][0m::Scan($Out, 67108864)[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m        ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:187[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 187 | [0m   [36;1mWrite-Host ("-- round {0}: {1}" -f $round, ($r.Trim() -replace "`r?[0m …[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mYou cannot call a method on a null-valued expression.[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:185[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 185 | [0m   $r = [36;1m[Dumper][0m::Scan($Out, 67108864)[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m        ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:187[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 187 | [0m   [36;1mWrite-Host ("-- round {0}: {1}" -f $round, ($r.Trim() -replace "`r?[0m …[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mYou cannot call a method on a null-valued expression.[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:185[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 185 | [0m   $r = [36;1m[Dumper][0m::Scan($Out, 67108864)[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m        ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:187[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 187 | [0m   [36;1mWrite-Host ("-- round {0}: {1}" -f $round, ($r.Trim() -replace "`r?[0m …[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mYou cannot call a method on a null-valued expression.[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:185[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 185 | [0m   $r = [36;1m[Dumper][0m::Scan($Out, 67108864)[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m        ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:187[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 187 | [0m   [36;1mWrite-Host ("-- round {0}: {1}" -f $round, ($r.Trim() -replace "`r?[0m …[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mYou cannot call a method on a null-valued expression.[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:185[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 185 | [0m   $r = [36;1m[Dumper][0m::Scan($Out, 67108864)[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m        ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:187[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 187 | [0m   [36;1mWrite-Host ("-- round {0}: {1}" -f $round, ($r.Trim() -replace "`r?[0m …[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mYou cannot call a method on a null-valued expression.[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:185[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 185 | [0m   $r = [36;1m[Dumper][0m::Scan($Out, 67108864)[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m        ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:187[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 187 | [0m   [36;1mWrite-Host ("-- round {0}: {1}" -f $round, ($r.Trim() -replace "`r?[0m …[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mYou cannot call a method on a null-valued expression.[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:185[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 185 | [0m   $r = [36;1m[Dumper][0m::Scan($Out, 67108864)[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m        ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:187[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 187 | [0m   [36;1mWrite-Host ("-- round {0}: {1}" -f $round, ($r.Trim() -replace "`r?[0m …[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mYou cannot call a method on a null-valued expression.[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:185[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 185 | [0m   $r = [36;1m[Dumper][0m::Scan($Out, 67108864)[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m        ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:187[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 187 | [0m   [36;1mWrite-Host ("-- round {0}: {1}" -f $round, ($r.Trim() -replace "`r?[0m …[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mYou cannot call a method on a null-valued expression.[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:185[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 185 | [0m   $r = [36;1m[Dumper][0m::Scan($Out, 67108864)[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m        ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:187[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 187 | [0m   [36;1mWrite-Host ("-- round {0}: {1}" -f $round, ($r.Trim() -replace "`r?[0m …[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mYou cannot call a method on a null-valued expression.[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:185[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 185 | [0m   $r = [36;1m[Dumper][0m::Scan($Out, 67108864)[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m        ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:187[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 187 | [0m   [36;1mWrite-Host ("-- round {0}: {1}" -f $round, ($r.Trim() -replace "`r?[0m …[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mYou cannot call a method on a null-valued expression.[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:185[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 185 | [0m   $r = [36;1m[Dumper][0m::Scan($Out, 67108864)[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m        ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:187[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 187 | [0m   [36;1mWrite-Host ("-- round {0}: {1}" -f $round, ($r.Trim() -replace "`r?[0m …[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mYou cannot call a method on a null-valued expression.[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:185[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 185 | [0m   $r = [36;1m[Dumper][0m::Scan($Out, 67108864)[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m        ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:187[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 187 | [0m   [36;1mWrite-Host ("-- round {0}: {1}" -f $round, ($r.Trim() -replace "`r?[0m …[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mYou cannot call a method on a null-valued expression.[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:185[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 185 | [0m   $r = [36;1m[Dumper][0m::Scan($Out, 67108864)[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m        ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:187[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 187 | [0m   [36;1mWrite-Host ("-- round {0}: {1}" -f $round, ($r.Trim() -replace "`r?[0m …[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mYou cannot call a method on a null-valued expression.[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:185[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 185 | [0m   $r = [36;1m[Dumper][0m::Scan($Out, 67108864)[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m        ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:187[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 187 | [0m   [36;1mWrite-Host ("-- round {0}: {1}" -f $round, ($r.Trim() -replace "`r?[0m …[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mYou cannot call a method on a null-valued expression.[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:185[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 185 | [0m   $r = [36;1m[Dumper][0m::Scan($Out, 67108864)[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m        ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:187[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 187 | [0m   [36;1mWrite-Host ("-- round {0}: {1}" -f $round, ($r.Trim() -replace "`r?[0m …[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mYou cannot call a method on a null-valued expression.[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:185[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 185 | [0m   $r = [36;1m[Dumper][0m::Scan($Out, 67108864)[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m        ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:187[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 187 | [0m   [36;1mWrite-Host ("-- round {0}: {1}" -f $round, ($r.Trim() -replace "`r?[0m …[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mYou cannot call a method on a null-valued expression.[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:185[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 185 | [0m   $r = [36;1m[Dumper][0m::Scan($Out, 67108864)[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m        ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:187[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 187 | [0m   [36;1mWrite-Host ("-- round {0}: {1}" -f $round, ($r.Trim() -replace "`r?[0m …[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mYou cannot call a method on a null-valued expression.[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:185[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 185 | [0m   $r = [36;1m[Dumper][0m::Scan($Out, 67108864)[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m        ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:187[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 187 | [0m   [36;1mWrite-Host ("-- round {0}: {1}" -f $round, ($r.Trim() -replace "`r?[0m …[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mYou cannot call a method on a null-valued expression.[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:185[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 185 | [0m   $r = [36;1m[Dumper][0m::Scan($Out, 67108864)[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m        ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:187[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 187 | [0m   [36;1mWrite-Host ("-- round {0}: {1}" -f $round, ($r.Trim() -replace "`r?[0m …[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mYou cannot call a method on a null-valued expression.[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:185[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 185 | [0m   $r = [36;1m[Dumper][0m::Scan($Out, 67108864)[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m        ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:187[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 187 | [0m   [36;1mWrite-Host ("-- round {0}: {1}" -f $round, ($r.Trim() -replace "`r?[0m …[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mYou cannot call a method on a null-valued expression.[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:185[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 185 | [0m   $r = [36;1m[Dumper][0m::Scan($Out, 67108864)[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m        ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:187[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 187 | [0m   [36;1mWrite-Host ("-- round {0}: {1}" -f $round, ($r.Trim() -replace "`r?[0m …[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mYou cannot call a method on a null-valued expression.[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:185[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 185 | [0m   $r = [36;1m[Dumper][0m::Scan($Out, 67108864)[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m        ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:187[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 187 | [0m   [36;1mWrite-Host ("-- round {0}: {1}" -f $round, ($r.Trim() -replace "`r?[0m …[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mYou cannot call a method on a null-valued expression.[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:185[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 185 | [0m   $r = [36;1m[Dumper][0m::Scan($Out, 67108864)[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m        ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:187[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 187 | [0m   [36;1mWrite-Host ("-- round {0}: {1}" -f $round, ($r.Trim() -replace "`r?[0m …[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mYou cannot call a method on a null-valued expression.[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:185[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 185 | [0m   $r = [36;1m[Dumper][0m::Scan($Out, 67108864)[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m        ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:187[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 187 | [0m   [36;1mWrite-Host ("-- round {0}: {1}" -f $round, ($r.Trim() -replace "`r?[0m …[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mYou cannot call a method on a null-valued expression.[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:185[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 185 | [0m   $r = [36;1m[Dumper][0m::Scan($Out, 67108864)[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m        ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:187[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 187 | [0m   [36;1mWrite-Host ("-- round {0}: {1}" -f $round, ($r.Trim() -replace "`r?[0m …[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mYou cannot call a method on a null-valued expression.[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:185[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 185 | [0m   $r = [36;1m[Dumper][0m::Scan($Out, 67108864)[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m        ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:187[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 187 | [0m   [36;1mWrite-Host ("-- round {0}: {1}" -f $round, ($r.Trim() -replace "`r?[0m …[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mYou cannot call a method on a null-valued expression.[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:185[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 185 | [0m   $r = [36;1m[Dumper][0m::Scan($Out, 67108864)[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m        ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:187[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 187 | [0m   [36;1mWrite-Host ("-- round {0}: {1}" -f $round, ($r.Trim() -replace "`r?[0m …[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mYou cannot call a method on a null-valued expression.[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:185[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 185 | [0m   $r = [36;1m[Dumper][0m::Scan($Out, 67108864)[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m        ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:187[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 187 | [0m   [36;1mWrite-Host ("-- round {0}: {1}" -f $round, ($r.Trim() -replace "`r?[0m …[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mYou cannot call a method on a null-valued expression.[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:185[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 185 | [0m   $r = [36;1m[Dumper][0m::Scan($Out, 67108864)[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m        ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:187[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 187 | [0m   [36;1mWrite-Host ("-- round {0}: {1}" -f $round, ($r.Trim() -replace "`r?[0m …[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mYou cannot call a method on a null-valued expression.[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:185[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 185 | [0m   $r = [36;1m[Dumper][0m::Scan($Out, 67108864)[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m        ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:187[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 187 | [0m   [36;1mWrite-Host ("-- round {0}: {1}" -f $round, ($r.Trim() -replace "`r?[0m …[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mYou cannot call a method on a null-valued expression.[0m
+[31;1mInvalidOperation: [0mD:\a\action-ipadown\action-ipadown\tools\dump.ps1:239[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m 239 | [0m [36;1m[Dumper][0m::Close()[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m ~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mUnable to find type [Dumper].[0m

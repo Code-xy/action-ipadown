@@ -1,0 +1,40 @@
+PID: 6816
+Output filter: no filter: dump everything (default)
+Dump mode: realigned raw (converted raw format to be the same as virtual)
+[*] Using raw process!
+[*] Scanning: D:\a\action-ipadown\action-ipadown\work\target.exe
+[*] Scanning: C:\Windows\System32\ntdll.dll
+[*] Scanning: C:\Windows\System32\kernel32.dll
+[*] Scanning: C:\Windows\System32\KERNELBASE.dll
+[*] Scanning: C:\Windows\System32\apphelp.dll
+[*] Scanning: C:\Windows\System32\user32.dll
+[*] Scanning: C:\Windows\System32\win32u.dll
+[*] Scanning: C:\Windows\System32\IPHLPAPI.DLL
+[*] Scanning: C:\Windows\System32\gdi32.dll
+[*] Scanning: C:\Windows\System32\ucrtbase.dll
+[*] Scanning: C:\Windows\System32\gdi32full.dll
+[*] Scanning: C:\Windows\System32\msvcp_win.dll
+[*] Scanning: C:\Windows\System32\advapi32.dll
+[*] Scanning: C:\Windows\System32\msvcrt.dll
+[*] Scanning: C:\Windows\System32\sechost.dll
+[*] Scanning: C:\Windows\System32\rpcrt4.dll
+[*] Scanning: C:\Windows\System32\shell32.dll
+[*] Scanning: C:\Windows\System32\WinTypes.dll
+[*] Scanning: C:\Windows\System32\combase.dll
+[*] Scanning: C:\Windows\System32\ole32.dll
+[*] Scanning: C:\Windows\System32\oleaut32.dll
+[*] Scanning: C:\Windows\System32\imm32.dll
+[*] Scanning: C:\Windows\System32\uxtheme.dll
+[*] Scanning: C:\Windows\System32\dwmapi.dll
+[*] Scanning: C:\Windows\System32\ws2_32.dll
+[*] Scanning: C:\Windows\System32\wtsapi32.dll
+[*] Scanning: C:\Windows\System32\crypt32.dll
+[*] Scanning: C:\Windows\System32\shlwapi.dll
+[*] Scanning: C:\Windows\System32\sspicli.dll
+[*] Scanning: C:\Windows\System32\userenv.dll
+[*] Scanning: C:\Windows\System32\version.dll
+[*] Scanning: C:\Windows\System32\netapi32.dll
+[*] Scanning: C:\Windows\System32\winmm.dll
+[*] Scanning: C:\Windows\System32\secur32.dll
+[*] Scanning: C:\Windows\System32\urlmon.dll
+[*] Scanning: C:\Windows\System32\wininet.dll

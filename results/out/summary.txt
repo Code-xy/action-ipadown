@@ -1,0 +1,12 @@
+== dump summary ==
+modules.txt                                                       704  head=4d 4f 44 2d 46 49 4c 45 20 20 44 3a 5c 61 5c 61
+pesieve_log.txt                                                  1872  head=50 49 44 3a 20 36 38 31 36 0d 0a 4f 75 74 70 75
+scan.log                                                            0  head=00 00
+summary.txt                                                        20  head=00 00
+target.exe                                                   23586304  head=4d 5a 90 00 03 00 00 00 04 00 00 00 ff ff 00 00
+ui.dll                                                        9072128  head=4d 5a 90 00 03 00 00 00 04 00 00 00 ff ff 00 00
+uimod.dll                                                     8892416  head=4d 5a 90 00 03 00 00 00 04 00 00 00 ff ff 00 00
+ui.dll                                                        9072128  head=4d 5a 90 00 03 00 00 00 04 00 00 00 ff ff 00 00
+uimod.dll                                                     8892416  head=4d 5a 90 00 03 00 00 00 04 00 00 00 ff ff 00 00
+dump_report.json                                                  141  head=20 7b 0d 0a 20 20 22 70 69 64 22 20 3a 20 36 38
+scan_report.json                                                 1221  head=20 7b 0d 0a 20 20 22 70 69 64 22 20 3a 20 36 38

@@ -1,0 +1,11 @@
+HollowsHunter v.0.4.1.1 (x64)
+Built on: Sep 13 2025
+
+using: PE-sieve v.0.4.1.1
+
+--------
+SUMMARY:
+Scan at: 10/30/26 14:55:09 (1793372109)
+Finished scan in: 20719 ms. = 20.719 sec.
+[*] Total scanned: 121
+[*] Total suspicious: 0
