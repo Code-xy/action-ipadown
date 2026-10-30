@@ -98,6 +98,66 @@ public static class Dumper {
     sb.AppendLine("scan done, new dumps=" + found);
     return sb.ToString();
   }
+
+  // ---- 内存明文搜索: 找被解压出来的 Sciter 资源(HTML/CSS/JS) ----
+  static int IdxOf(byte[] d, string s) {
+    byte[] p = Encoding.ASCII.GetBytes(s);
+    int lim = d.Length - p.Length;
+    for (int i = 0; i <= lim; i++) {
+      int j = 0; while (j < p.Length && d[i + j] == p[j]) j++;
+      if (j == p.Length) return i;
+    }
+    return -1;
+  }
+  static int CountCjk(byte[] d) {
+    int c = 0;
+    for (int i = 0; i + 2 < d.Length; i++) {
+      byte b0 = d[i];
+      if (b0 >= 0xE4 && b0 <= 0xE9) {
+        byte b1 = d[i + 1], b2 = d[i + 2];
+        if (b1 >= 0x80 && b1 <= 0xBF && b2 >= 0x80 && b2 <= 0xBF) { c++; i += 2; }
+      }
+    }
+    return c;
+  }
+  public static string TextHunt(string outDir, int maxRegion, long budgetBytes) {
+    if (H == IntPtr.Zero) return "not open";
+    Directory.CreateDirectory(outDir);
+    var sb = new StringBuilder();
+    string[] marks = new string[] { "<!DOCTYPE", "<!doctype", "<html", "<style", "<script", "function ", "document.", "onclick", "class=", "background:", "@media", "sciter", "Sciter" };
+    long addr = 0; int dumped = 0; int regs = 0; long budget = budgetBytes;
+    while (true) {
+      MBI m; IntPtr q;
+      try { q = VirtualQueryEx(H, new IntPtr(addr), out m, (IntPtr)Marshal.SizeOf(typeof(MBI))); } catch { break; }
+      if (q == IntPtr.Zero) break;
+      long sz = m.Size.ToInt64();
+      if (sz <= 0) break;
+      uint pb = m.Protect & 0xFF;
+      bool guard = (m.Protect & 0x100) != 0;
+      if (m.State == 0x1000 && sz >= 4096 && sz <= 0x8000000 && !guard && pb != 0x01 && budget > 0) {
+        int take = (int)Math.Min(sz, (long)maxRegion);
+        byte[] data = Read(addr, take);
+        if (data != null) {
+          budget -= take; regs++;
+          int score = 0; string best = "";
+          foreach (string mk in marks) { if (IdxOf(data, mk) >= 0) { score++; if (best.Length == 0) best = mk; } }
+          int cn = CountCjk(data);
+          if (cn > 30) { score += 2; if (best.Length == 0) best = "cjk"; }
+          if (score >= 4) {
+            string tag = best.Replace("<", "").Replace("!", "").Replace(".", "").Replace(" ", "").Replace("@", "").Replace("=", "").Replace(":", "");
+            string fn = Path.Combine(outDir, "text_" + dumped.ToString("d2") + "_" + addr.ToString("x") + "_" + take.ToString("x") + "_" + tag + ".bin");
+            try { File.WriteAllBytes(fn, data); sb.AppendLine("TEXT-DUMP " + fn + " score=" + score + " cjk=" + cn + " region=" + sz + " prot=0x" + m.Protect.ToString("x")); dumped++; } catch {}
+          }
+        }
+      }
+      long next = addr + sz;
+      if (next <= addr) break;
+      addr = next;
+      if (addr >= 0x7FFF00000000L) break;
+    }
+    sb.AppendLine("text hunt: scanned " + regs + " regions, dumped " + dumped);
+    return sb.ToString();
+  }
 }
 "@
 
@@ -164,6 +224,12 @@ while (((Get-Date) - $t0).TotalSeconds -lt $Seconds) {
   Start-Sleep -Milliseconds 1500
 }
 
+Write-Host "== text hunt (找解压后的 HTML/JS) =="
+try {
+  $th = [Dumper]::TextHunt((Join-Path $Out "text"), 8388608, 536870912)
+  $th | Out-File (Join-Path $Out "text_hunt.log") -Append
+  Write-Host $th
+} catch { Write-Host "text hunt failed: $_" }
 if ($Pesieve -and (Test-Path $Pesieve) -and -not $proc.HasExited) {
   $psdir = Join-Path $Out "pesieve"
   New-Item -ItemType Directory -Force -Path $psdir | Out-Null
