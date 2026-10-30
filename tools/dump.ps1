@@ -13,6 +13,7 @@ New-Item -ItemType Directory -Force -Path $modsDir | Out-Null
 Add-Type -TypeDefinition @"
 using System;
 using System.IO;
+using System.Text;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 public static class Dumper {
@@ -123,7 +124,7 @@ public static class Dumper {
   public static string TextHunt(string outDir, int maxRegion, long budgetBytes) {
     if (H == IntPtr.Zero) return "not open";
     Directory.CreateDirectory(outDir);
-    var sb = new StringBuilder();
+    var sb = new System.Text.StringBuilder();
     string[] marks = new string[] { "<!DOCTYPE", "<!doctype", "<html", "<style", "<script", "function ", "document.", "onclick", "class=", "background:", "@media", "sciter", "Sciter" };
     long addr = 0; int dumped = 0; int regs = 0; long budget = budgetBytes;
     while (true) {
@@ -168,6 +169,7 @@ $proc = Start-Process -FilePath $Exe -WorkingDirectory $workdir -PassThru
 $target = $proc.Id
 Write-Host "STARTED pid=$target exe=$Exe temp=$tempRoot"
 Start-Sleep -Seconds 3
+if (-not ('Dumper' -as [type])) { Write-Host "FATAL: Add-Type 编译失败"; exit 2 }
 if (-not [Dumper]::Open($target)) {
   Write-Host ("OpenProcess FAILED err=" + [Runtime.InteropServices.Marshal]::GetLastWin32Error())
   exit 1
