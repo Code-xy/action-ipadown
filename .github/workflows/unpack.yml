@@ -41,6 +41,8 @@ jobs:
             if ($LASTEXITCODE -ne 0) { try { Expand-Archive -Path $_.FullName -DestinationPath work -Force -ErrorAction Stop } catch { "Expand-Archive failed: $_" | Out-File $log -Append } }
           }
           Get-ChildItem work -Recurse -File | Unblock-File -ErrorAction SilentlyContinue
+          $e = Get-ChildItem work\*.exe | Select-Object -First 1
+          if ($e -and $e.Name -ne 'target.exe') { Move-Item $e.FullName (Join-Path $e.Directory 'target.exe') -Force; "renamed $($e.Name) -> target.exe" | Out-File $log -Append }
           "== work dir ==" | Out-File $log -Append
           Get-ChildItem work -Recurse -File | Select-Object Name,Length | Format-Table -AutoSize | Out-File $log -Append
           Get-Content $log
@@ -57,9 +59,9 @@ jobs:
       - name: run-and-dump
         shell: pwsh
         run: |
-          $exe = (Get-ChildItem work\*.exe | Select-Object -First 1).FullName
+          if (Test-Path work\target.exe) { $exe = (Resolve-Path work\target.exe).Path } else { $exe = (Get-ChildItem work\*.exe | Select-Object -First 1).FullName }
           Write-Host "target = $exe"
-          .\tools\dump.ps1 -Exe $exe -Out out -Pesieve ".\pe-sieve64.exe" -Seconds 45 *>&1 | Tee-Object -FilePath dump_log.txt
+          .\tools\dump.ps1 -Exe $exe -Out out -Pesieve ".\pe-sieve64.exe" -Seconds 90 *>&1 | Tee-Object -FilePath dump_log.txt
           "== dump files ==" | Out-File out\summary.txt -Encoding utf8
           Get-ChildItem -Recurse out -File | ForEach-Object {
             $fs=[IO.File]::OpenRead($_.FullName); $b=New-Object byte[] 32
