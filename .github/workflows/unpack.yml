@@ -3,27 +3,27 @@ name: win-unpack
 on:
   workflow_dispatch:
   push:
-    branches-ignore: ['results']
+    branches-ignore: ['results', 'res-*']
 
 permissions:
   contents: write
+  issues: write
 
 jobs:
   unpack:
     runs-on: windows-latest
-    timeout-minutes: 45
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
 
       - name: prepare-target
         shell: pwsh
         run: |
-          $ProgressPreference='SilentlyContinue'
+          $ErrorActionPreference = 'Continue'
+          $ProgressPreference = 'SilentlyContinue'
           New-Item -ItemType Directory -Force -Path work | Out-Null
           $log = "work\target_log.txt"
           "== pwd = $(Get-Location)" | Out-File $log -Encoding utf8
-          "== tree ==" | Out-File $log -Append
-          Get-ChildItem -Recurse -File | Select-Object FullName,Length | Format-Table -AutoSize | Out-File $log -Append
           $local = Get-ChildItem -Recurse -File -Include *.zip,*.exe |
                    Where-Object { $_.FullName -notmatch '\\work\\' -and ($_.Name -like 'yuntui*' -or $_.Name -like '*云推*') } |
                    Select-Object -First 1
@@ -33,7 +33,7 @@ jobs:
           } else {
             $u='http://softupdate1.maposafe.com/uploads/7974449/5236313/%E4%BA%91%E6%8E%A8%E5%86%85%E9%83%A8%E7%89%88PLUS10.26.zip'
             "== download $u" | Out-File $log -Append
-            curl.exe -L -v --retry 2 --retry-delay 3 --max-time 300 -o work\target.zip "$u" *>> $log
+            curl.exe -L --retry 2 --retry-delay 3 --max-time 300 -o work\target.zip "$u" *>> $log
           }
           Get-ChildItem work\*.zip -ErrorAction SilentlyContinue | ForEach-Object {
             "== expand $($_.Name) ($($_.Length) bytes)" | Out-File $log -Append
@@ -42,86 +42,137 @@ jobs:
           }
           Get-ChildItem work -Recurse -File | Unblock-File -ErrorAction SilentlyContinue
           $e = Get-ChildItem work\*.exe | Select-Object -First 1
-          if ($e -and $e.Name -ne 'target.exe') { Move-Item $e.FullName (Join-Path $e.Directory 'target.exe') -Force; "renamed $($e.Name) -> target.exe" | Out-File $log -Append }
+          if ($e -and $e.Name -ne 'target.exe') { Move-Item $e.FullName (Join-Path $e.Directory 'target.exe') -Force; "renamed -> target.exe" | Out-File $log -Append }
           "== work dir ==" | Out-File $log -Append
           Get-ChildItem work -Recurse -File | Select-Object Name,Length | Format-Table -AutoSize | Out-File $log -Append
           Get-Content $log
-          if (-not (Get-ChildItem work -Recurse -File -Include *.exe)) { Write-Host "##[error] target exe missing"; exit 1 }
+          exit 0
 
       - name: fetch-unpackers
         shell: pwsh
         timeout-minutes: 6
+        continue-on-error: true
         run: |
-          $ProgressPreference='SilentlyContinue'
-          curl.exe -L --retry 5 --retry-delay 5 -o pe-sieve64.exe      https://github.com/hasherezade/pe-sieve/releases/latest/download/pe-sieve64.exe
-          curl.exe -L --retry 5 --retry-delay 5 -o hollows_hunter64.exe https://github.com/hasherezade/hollows_hunter/releases/latest/download/hollows_hunter64.exe
+          $ErrorActionPreference = 'Continue'
+          $ProgressPreference = 'SilentlyContinue'
+          curl.exe -L --retry 5 --retry-delay 5 --max-time 240 -o pe-sieve64.exe      https://github.com/hasherezade/pe-sieve/releases/latest/download/pe-sieve64.exe
+          curl.exe -L --retry 5 --retry-delay 5 --max-time 240 -o hollows_hunter64.exe https://github.com/hasherezade/hollows_hunter/releases/latest/download/hollows_hunter64.exe
           Get-ChildItem *.exe | Select-Object Name,Length | Format-Table -AutoSize
+          exit 0
 
       - name: run-and-dump
         shell: pwsh
         timeout-minutes: 12
+        continue-on-error: true
         run: |
-          if (Test-Path work\target.exe) { $exe = (Resolve-Path work\target.exe).Path } else { $exe = (Get-ChildItem work\*.exe | Select-Object -First 1).FullName }
-          Write-Host "target = $exe"
-          $das = @('-NoProfile','-ExecutionPolicy','Bypass','-File','.\tools\dump.ps1','-Exe',$exe,'-Out','out','-Seconds','60')
-          if (Test-Path .\pe-sieve64.exe) { $das += @('-Pesieve','.\pe-sieve64.exe') }
-          $p = Start-Process pwsh -ArgumentList $das -PassThru -NoNewWindow -RedirectStandardOutput dump_log.txt -RedirectStandardError dump_err.txt
-          Write-Host "dumper pid=$($p.Id) (hard cap 480s)"
-          try { $p | Wait-Process -Timeout 480 -ErrorAction Stop } catch { Write-Host "dumper STILL RUNNING after 480s -> force kill" }
-          if (-not $p.HasExited) { Stop-Process -Id $p.Id -Force -ErrorAction SilentlyContinue }
-          Write-Host "dumper exit=$($p.ExitCode)"
-          Get-Content dump_log.txt -ErrorAction SilentlyContinue | Select-Object -Last 120
-          Get-Content dump_err.txt  -ErrorAction SilentlyContinue | Select-Object -Last 40
-          "== dump files ==" | Out-File out\summary.txt -Encoding utf8
-          Get-ChildItem -Recurse out -File | ForEach-Object {
+          $ErrorActionPreference = 'Continue'
+          $ProgressPreference = 'SilentlyContinue'
+          try {
+            if (Test-Path work\target.exe) { $exe = (Resolve-Path work\target.exe).Path }
+            else { $exe = (Get-ChildItem work\*.exe | Select-Object -First 1).FullName }
+            Write-Host "target = $exe"
+            $das = @('-NoProfile','-ExecutionPolicy','Bypass','-File','./tools/dump.ps1','-Exe',$exe,'-Out','out','-Seconds','60')
+            if (Test-Path .\pe-sieve64.exe) { $das += @('-Pesieve','./pe-sieve64.exe') }
+            Write-Host ("dumper args: " + ($das -join ' '))
+            $p = Start-Process pwsh -ArgumentList $das -PassThru -NoNewWindow -RedirectStandardOutput dump_log.txt -RedirectStandardError dump_err.txt
+            Write-Host "dumper pid=$($p.Id) hard cap 480s"
+            try { $p | Wait-Process -Timeout 480 -ErrorAction Stop } catch { Write-Host "dumper still running after 480s -> kill: $_" }
+            if (-not $p.HasExited) { Stop-Process -Id $p.Id -Force -ErrorAction SilentlyContinue }
+            Write-Host "dumper exitcode=$($p.ExitCode)"
+          } catch {
+            Write-Host "RUN-AND-DUMP EXCEPTION: $_"
+            "RUN-AND-DUMP EXCEPTION: $_" | Out-File dump_err.txt -Append
+          }
+          Write-Host "=== dump_log.txt (tail) ==="
+          Get-Content dump_log.txt -Tail 200 -ErrorAction SilentlyContinue
+          Write-Host "=== dump_err.txt (tail) ==="
+          Get-Content dump_err.txt -Tail 100 -ErrorAction SilentlyContinue
+          New-Item -ItemType Directory -Force -Path out | Out-Null
+          "== dump summary ==" | Out-File out\summary.txt -Encoding utf8
+          Get-ChildItem -Recurse out -File -ErrorAction SilentlyContinue | ForEach-Object {
             $fs=[IO.File]::OpenRead($_.FullName); $b=New-Object byte[] 32
             $n=$fs.Read($b,0,32); $fs.Close()
             "{0,-58} {1,10}  head={2}" -f $_.Name, $_.Length, (($b[0..([Math]::Min(15,$n-1))] | ForEach-Object { $_.ToString('x2') }) -join ' ')
           } | Tee-Object -FilePath out\summary.txt -Append
+          Get-ChildItem -Recurse out -File | Select-Object FullName,Length | Format-Table -AutoSize
+          exit 0
 
       - name: hollows-hunter-scan
+        if: always()
         shell: pwsh
         timeout-minutes: 8
         continue-on-error: true
         run: |
+          $ErrorActionPreference = 'Continue'
           New-Item -ItemType Directory -Force -Path out\hh | Out-Null
-          .\hollows_hunter64.exe /dir out\hh /quiet *>&1 | Tee-Object -FilePath out\hh_log.txt
+          if (Test-Path .\hollows_hunter64.exe) { .\hollows_hunter64.exe /dir out\hh /quiet *>&1 | Tee-Object -FilePath out\hh_log.txt }
           Get-ChildItem -Recurse out\hh -File -ErrorAction SilentlyContinue | Select-Object FullName,Length | Format-Table -AutoSize
-
-      - name: publish-results
-        if: always()
-        shell: pwsh
-        run: |
-          New-Item -ItemType Directory -Force -Path results | Out-Null
-          Copy-Item out\* results\ -Recurse -Force -ErrorAction SilentlyContinue
-          Copy-Item *.log,*.txt results\ -Force -ErrorAction SilentlyContinue
-          Copy-Item work\*.log,work\*.txt results\ -Force -ErrorAction SilentlyContinue
-          @(
-            "repo=$env:GITHUB_REPOSITORY",
-            "run_id=$env:GITHUB_RUN_ID",
-            "sha=$env:GITHUB_SHA",
-            "ref=$env:GITHUB_REF",
-            "runner=$env:RUNNER_OS $env:RUNNER_ARCH",
-            "time=$((Get-Date).ToUniversalTime().ToString('s'))Z"
-          ) | Out-File results\RUN.txt -Encoding utf8
-          Compress-Archive -Path results\* -DestinationPath dumps.zip -Force -ErrorAction SilentlyContinue
-          Get-ChildItem -Recurse results -File | Select-Object FullName,Length | Format-Table -AutoSize
-          git config user.email "actions@users.noreply.github.com"
-          git config user.name  "github-actions"
-          git checkout -B results
-          git add -f results dumps.zip
-          git commit -m "unpack results: run $env:GITHUB_RUN_ID"
-          git push -f "https://x-access-token:$env:GITHUB_TOKEN@github.com/$env:GITHUB_REPOSITORY.git" results
-          Write-Host "pushed branch results"
+          exit 0
 
       - name: upload
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: unpack-dumps
+          name: unpack-artifacts
           path: |
             out/**
             *.log
-            work/*.txt
+            *.txt
+            tools/**
           if-no-files-found: warn
           compression-level: 1
+
+  publish:
+    needs: unpack
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: download
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: unpack-artifacts
+          path: art
+
+      - name: show
+        run: |
+          echo "unpack job result: ${{ needs.unpack.result }}"
+          ls -la art || true
+          du -sh art 2>/dev/null || true
+          find art -type f -printf '%10s  %p\n' 2>/dev/null | sort -k2 | head -60
+
+      - name: push-results
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -x
+          mkdir -p res/results
+          if [ -d art ]; then cp -r art/. res/results/ ; fi
+          cd res
+          git init -q
+          git config user.email actions@users.noreply.github.com
+          git config user.name github-actions
+          git add -A -f
+          git commit -q -m "results for ${GITHUB_RUN_ID}" || echo "nothing to commit"
+          git push -f "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "HEAD:refs/heads/results"
+          git push -f "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "HEAD:refs/heads/res-${GITHUB_RUN_ID}"
+
+      - name: report
+        if: always()
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          URES: ${{ needs.unpack.result }}
+        run: |
+          {
+            echo "run: ${GITHUB_RUN_ID}  ref: ${GITHUB_REF_NAME}  unpack-job: ${URES}"
+            echo
+            echo '## files'
+            find art -type f -printf '%10s  %p\n' 2>/dev/null | sort -k2 | head -60
+            echo
+            for f in art/dump_err.txt art/dump_log.txt art/target_log.txt art/out/summary.txt art/out/scan.log art/out/pesieve_log.txt; do
+              if [ -f "$f" ]; then echo "## $f"; tail -c 4000 "$f"; echo; fi
+            done
+          } > body.md
+          jq -n --arg t "[unpack] run ${GITHUB_RUN_ID} ${URES}" --rawfile b body.md '{title:$t, body:$b}' > payload.json
+          curl -s -X POST -H "Authorization: token ${TOKEN}" -H "Accept: application/vnd.github+json" \
+               -d @payload.json "https://api.github.com/repos/${GITHUB_REPOSITORY}/issues" | head -c 400
