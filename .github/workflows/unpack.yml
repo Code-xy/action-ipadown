@@ -11,7 +11,7 @@ permissions:
 jobs:
   unpack:
     runs-on: windows-latest
-    timeout-minutes: 40
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
 
@@ -20,27 +20,31 @@ jobs:
         run: |
           $ProgressPreference='SilentlyContinue'
           New-Item -ItemType Directory -Force -Path work | Out-Null
+          $log = "work\target_log.txt"
+          "== pwd = $(Get-Location)" | Out-File $log -Encoding utf8
+          "== tree ==" | Out-File $log -Append
+          Get-ChildItem -Recurse -File | Select-Object FullName,Length | Format-Table -AutoSize | Out-File $log -Append
           $local = Get-ChildItem -Recurse -File -Include *.zip,*.exe |
                    Where-Object { $_.FullName -notmatch '\\work\\' -and ($_.Name -like 'yuntui*' -or $_.Name -like '*云推*') } |
                    Select-Object -First 1
           if ($local) {
-            Write-Host "using repo file: $($local.FullName)"
+            "== use repo file: $($local.FullName) ($($local.Length) bytes)" | Out-File $log -Append
             Copy-Item $local.FullName work\ -Force
           } else {
             $u='http://softupdate1.maposafe.com/uploads/7974449/5236313/%E4%BA%91%E6%8E%A8%E5%86%85%E9%83%A8%E7%89%88PLUS10.26.zip'
-            Write-Host "downloading from upstream ..."
-            curl.exe -L --retry 3 --retry-delay 5 --max-time 600 -o work\target.zip "$u"
+            "== download $u" | Out-File $log -Append
+            curl.exe -L -v --retry 2 --retry-delay 3 --max-time 300 -o work\target.zip "$u" *>> $log
           }
           Get-ChildItem work\*.zip -ErrorAction SilentlyContinue | ForEach-Object {
-            Write-Host "expand $($_.Name)"
-            Expand-Archive -Path $_.FullName -DestinationPath work -Force
+            "== expand $($_.Name) ($($_.Length) bytes)" | Out-File $log -Append
+            tar.exe -xf $_.FullName -C work *>> $log
+            if ($LASTEXITCODE -ne 0) { try { Expand-Archive -Path $_.FullName -DestinationPath work -Force -ErrorAction Stop } catch { "Expand-Archive failed: $_" | Out-File $log -Append } }
           }
           Get-ChildItem work -Recurse -File | Unblock-File -ErrorAction SilentlyContinue
-          Get-ChildItem work -Recurse -File | Select-Object Name,Length | Format-Table -AutoSize
-          if (-not (Get-ChildItem work -Recurse -File -Include *.exe)) {
-            Write-Host "##[error] 目标 EXE 未就位：上游下载失败，需要把 zip 提交进仓库"
-            exit 1
-          }
+          "== work dir ==" | Out-File $log -Append
+          Get-ChildItem work -Recurse -File | Select-Object Name,Length | Format-Table -AutoSize | Out-File $log -Append
+          Get-Content $log
+          if (-not (Get-ChildItem work -Recurse -File -Include *.exe)) { Write-Host "##[error] target exe missing"; exit 1 }
 
       - name: fetch-unpackers
         shell: pwsh
@@ -55,20 +59,20 @@ jobs:
         run: |
           $exe = (Get-ChildItem work\*.exe | Select-Object -First 1).FullName
           Write-Host "target = $exe"
-          .\tools\dump.ps1 -Exe $exe -Out out -Pesieve ".\pe-sieve64.exe" -Seconds 45
-          Write-Host "--- dump summary ---"
+          .\tools\dump.ps1 -Exe $exe -Out out -Pesieve ".\pe-sieve64.exe" -Seconds 45 *>&1 | Tee-Object -FilePath dump_log.txt
+          "== dump files ==" | Out-File out\summary.txt -Encoding utf8
           Get-ChildItem -Recurse out -File | ForEach-Object {
             $fs=[IO.File]::OpenRead($_.FullName); $b=New-Object byte[] 32
             $n=$fs.Read($b,0,32); $fs.Close()
             "{0,-58} {1,10}  head={2}" -f $_.Name, $_.Length, (($b[0..([Math]::Min(15,$n-1))] | ForEach-Object { $_.ToString('x2') }) -join ' ')
-          } | Tee-Object -FilePath out\summary.txt
+          } | Tee-Object -FilePath out\summary.txt -Append
 
       - name: hollows-hunter-scan
         shell: pwsh
         continue-on-error: true
         run: |
           New-Item -ItemType Directory -Force -Path out\hh | Out-Null
-          .\hollows_hunter64.exe /dir out\hh /quiet 2>&1 | Tee-Object -FilePath out\hh_log.txt
+          .\hollows_hunter64.exe /dir out\hh /quiet *>&1 | Tee-Object -FilePath out\hh_log.txt
           Get-ChildItem -Recurse out\hh -File -ErrorAction SilentlyContinue | Select-Object FullName,Length | Format-Table -AutoSize
 
       - name: publish-results
@@ -76,7 +80,9 @@ jobs:
         shell: pwsh
         run: |
           New-Item -ItemType Directory -Force -Path results | Out-Null
-          Copy-Item out\*  results\ -Recurse -Force -ErrorAction SilentlyContinue
+          Copy-Item out\* results\ -Recurse -Force -ErrorAction SilentlyContinue
+          Copy-Item *.log,*.txt results\ -Force -ErrorAction SilentlyContinue
+          Copy-Item work\*.log,work\*.txt results\ -Force -ErrorAction SilentlyContinue
           @(
             "repo=$env:GITHUB_REPOSITORY",
             "run_id=$env:GITHUB_RUN_ID",
@@ -85,20 +91,24 @@ jobs:
             "runner=$env:RUNNER_OS $env:RUNNER_ARCH",
             "time=$((Get-Date).ToUniversalTime().ToString('s'))Z"
           ) | Out-File results\RUN.txt -Encoding utf8
-          if (Test-Path results) { Compress-Archive -Path results\* -DestinationPath dumps.zip -Force -ErrorAction SilentlyContinue }
+          Compress-Archive -Path results\* -DestinationPath dumps.zip -Force -ErrorAction SilentlyContinue
+          Get-ChildItem -Recurse results -File | Select-Object FullName,Length | Format-Table -AutoSize
           git config user.email "actions@users.noreply.github.com"
           git config user.name  "github-actions"
           git checkout -B results
           git add -f results dumps.zip
-          git commit -m "unpack results: run $env:GITHUB_RUN_ID" 
+          git commit -m "unpack results: run $env:GITHUB_RUN_ID"
           git push -f "https://x-access-token:$env:GITHUB_TOKEN@github.com/$env:GITHUB_REPOSITORY.git" results
-          Write-Host "pushed branch 'results'"
+          Write-Host "pushed branch results"
 
       - name: upload
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: unpack-dumps
-          path: out/**
+          path: |
+            out/**
+            *.log
+            work/*.txt
           if-no-files-found: warn
           compression-level: 1
