@@ -1,0 +1,102 @@
+DUMP-EXEC out\exec_00_140001000.bin (size=40943616) region=40943616 prot=0x40
+DUMP-EXEC out\exec_01_14270d000.bin (size=10567680) region=10567680 prot=0x80
+DUMP-EXEC out\exec_02_7ffe07b51000.bin (size=2007040) region=2007040 prot=0x20
+DUMP-EXEC out\exec_03_7ffe189e1000.bin (size=2056192) region=2056192 prot=0x20
+DUMP-EXEC out\exec_04_7ffe1d181000.bin (size=6615040) region=6615040 prot=0x20
+DUMP-EXEC out\exec_05_7ffe1e3c1000.bin (size=1253376) region=1253376 prot=0x20
+DUMP-EXEC out\exec_06_7ffe24f61000.bin (size=1220608) region=1220608 prot=0x20
+DUMP-EXEC out\exec_07_7ffe25391000.bin (size=1712128) region=1712128 prot=0x20
+DUMP-EXEC out\exec_08_7ffe26931000.bin (size=5943296) region=5943296 prot=0x20
+DUMP-EXEC out\exec_09_7ffe27871000.bin (size=2564096) region=2564096 prot=0x20
+DUMP-EXEC out\exec_10_7ffe27c41000.bin (size=1519616) region=1519616 prot=0x20
+scan done, new dumps=11
+
+DUMP-MZ   out\mz_00_d5c0000_img48000.bin (size=286720) region=286720 prot=0x2
+DUMP-EXEC out\exec_01_142774000.bin (size=10145792) region=10145792 prot=0x40
+DUMP-EXEC out\exec_02_7ffde6d71000.bin (size=6045696) region=6045696 prot=0x20
+DUMP-EXEC out\exec_03_7ffdfd561000.bin (size=2998272) region=2998272 prot=0x20
+DUMP-EXEC out\exec_04_7ffe04d31000.bin (size=1536000) region=1536000 prot=0x20
+DUMP-EXEC out\exec_05_7ffe089d1000.bin (size=1675264) region=1675264 prot=0x20
+DUMP-EXEC out\exec_06_7ffe09771000.bin (size=4841472) region=4841472 prot=0x20
+DUMP-EXEC out\exec_07_7ffe0a5d1000.bin (size=1691648) region=1691648 prot=0x20
+DUMP-EXEC out\exec_08_7ffe1f281000.bin (size=3534848) region=3534848 prot=0x20
+DUMP-EXEC out\exec_09_7ffe1f711000.bin (size=1667072) region=1667072 prot=0x20
+DUMP-EXEC out\exec_10_7ffe1fbc1000.bin (size=1912832) region=1912832 prot=0x20
+DUMP-EXEC out\exec_11_7ffe1fe31000.bin (size=3211264) region=3211264 prot=0x20
+DUMP-EXEC out\exec_12_7ffe25be1000.bin (size=1142784) region=1142784 prot=0x20
+scan done, new dumps=13
+
+scan done, new dumps=0
+
+scan done, new dumps=0
+
+scan done, new dumps=0
+
+scan done, new dumps=0
+
+scan done, new dumps=0
+
+scan done, new dumps=0
+
+scan done, new dumps=0
+
+scan done, new dumps=0
+
+scan done, new dumps=0
+
+scan done, new dumps=0
+
+scan done, new dumps=0
+
+scan done, new dumps=0
+
+scan done, new dumps=0
+
+scan done, new dumps=0
+
+scan done, new dumps=0
+
+scan done, new dumps=0
+
+scan done, new dumps=0
+
+scan done, new dumps=0
+
+scan done, new dumps=0
+
+scan done, new dumps=0
+
+scan done, new dumps=0
+
+scan done, new dumps=0
+
+scan done, new dumps=0
+
+scan done, new dumps=0
+
+scan done, new dumps=0
+
+scan done, new dumps=0
+
+scan done, new dumps=0
+
+scan done, new dumps=0
+
+scan done, new dumps=0
+
+scan done, new dumps=0
+
+scan done, new dumps=0
+
+scan done, new dumps=0
+
+scan done, new dumps=0
+
+scan done, new dumps=0
+
+scan done, new dumps=0
+
+scan done, new dumps=0
+
+scan done, new dumps=0
+
