@@ -1,0 +1,97 @@
+STARTED pid=9652 exe=D:\a\action-ipadown\action-ipadown\work\target.exe temp=C:\Users\RUNNER~1\AppData\Local\Temp
+-- round 1: DUMP-EXEC out\exec_00_140001000.bin (size=40943616) region=40943616 prot=0x40 | DUMP-EXEC out\exec_01_14270d000.bin (size=10567680) region=10567680 prot=0x80 | DUMP-EXEC out\exec_02_7ff893be1000.bin (size=2007040) region=2007040 prot=0x20 | DUMP-EXEC out\exec_03_7ff8af9e1000.bin (size=2056192) region=2056192 prot=0x20 | DUMP-EXEC out\exec_04_7ff8b4701000.bin (size=6615040) region=6615040 prot=0x20 | DUMP-EXEC out\exec_05_7ff8b5241000.bin (size=1253376) region=1253376 prot=0x20 | DUMP-EXEC out\exec_06_7ff8bc071000.bin (size=1712128) region=1712128 prot=0x20 | DUMP-EXEC out\exec_07_7ff8bc471000.bin (size=1220608) region=1220608 prot=0x20 | DUMP-EXEC out\exec_08_7ff8bcdb1000.bin (size=2564096) region=2564096 prot=0x20 | DUMP-EXEC out\exec_09_7ff8be191000.bin (size=5943296) region=5943296 prot=0x20 | DUMP-EXEC out\exec_10_7ff8be941000.bin (size=1519616) region=1519616 prot=0x20 | scan done, new dumps=11
+-- round 2: DUMP-MZ   out\mz_00_d4d0000_img48000.bin (size=286720) region=286720 prot=0x2 | DUMP-EXEC out\exec_01_142774000.bin (size=10145792) region=10145792 prot=0x40 | DUMP-EXEC out\exec_02_7ff87ee11000.bin (size=6045696) region=6045696 prot=0x20 | DUMP-EXEC out\exec_03_7ff893e81000.bin (size=2998272) region=2998272 prot=0x20 | DUMP-EXEC out\exec_04_7ff89f831000.bin (size=1675264) region=1675264 prot=0x20 | DUMP-EXEC out\exec_05_7ff8a0731000.bin (size=4841472) region=4841472 prot=0x20 | DUMP-EXEC out\exec_06_7ff8a1061000.bin (size=1691648) region=1691648 prot=0x20 | DUMP-EXEC out\exec_07_7ff8a1e11000.bin (size=1536000) region=1536000 prot=0x20 | DUMP-EXEC out\exec_08_7ff8b6141000.bin (size=3534848) region=3534848 prot=0x20 | DUMP-EXEC out\exec_09_7ff8b6841000.bin (size=1667072) region=1667072 prot=0x20 | DUMP-EXEC out\exec_10_7ff8b6b31000.bin (size=1912832) region=1912832 prot=0x20 | DUMP-EXEC out\exec_11_7ff8b6da1000.bin (size=3211264) region=3211264 prot=0x20 | DUMP-EXEC out\exec_12_7ff8bde41000.bin (size=1142784) region=1142784 prot=0x20 | scan done, new dumps=13
+-- round 3: scan done, new dumps=0
+-- round 4: scan done, new dumps=0
+-- round 5: scan done, new dumps=0
+-- round 6: scan done, new dumps=0
+-- round 7: scan done, new dumps=0
+-- round 8: scan done, new dumps=0
+-- round 9: scan done, new dumps=0
+-- round 10: scan done, new dumps=0
+-- round 11: scan done, new dumps=0
+-- round 12: scan done, new dumps=0
+-- round 13: scan done, new dumps=0
+-- round 14: scan done, new dumps=0
+-- round 15: scan done, new dumps=0
+-- round 16: scan done, new dumps=0
+-- round 17: scan done, new dumps=0
+-- round 18: scan done, new dumps=0
+-- round 19: scan done, new dumps=0
+-- round 20: scan done, new dumps=0
+-- round 21: scan done, new dumps=0
+-- round 22: scan done, new dumps=0
+-- round 23: scan done, new dumps=0
+-- round 24: scan done, new dumps=0
+-- round 25: scan done, new dumps=0
+-- round 26: scan done, new dumps=0
+-- round 27: scan done, new dumps=0
+-- round 28: scan done, new dumps=0
+-- round 29: scan done, new dumps=0
+-- round 30: scan done, new dumps=0
+-- round 31: scan done, new dumps=0
+-- round 32: scan done, new dumps=0
+-- round 33: scan done, new dumps=0
+-- round 34: scan done, new dumps=0
+-- round 35: scan done, new dumps=0
+-- round 36: scan done, new dumps=0
+-- round 37: scan done, new dumps=0
+-- round 38: scan done, new dumps=0
+-- round 39: scan done, new dumps=0
+== text hunt (找解压后的 HTML/JS) ==
+TEXT-DUMP out\text\text_00_4810000_ff000_doctype.bin score=12 cjk=85 region=1044480 prot=0x4
+TEXT-DUMP out\text\text_01_6bc0000_1ff000_function.bin score=6 cjk=46 region=2093056 prot=0x4
+TEXT-DUMP out\text\text_02_6dc0000_3ff000_function.bin score=5 cjk=875 region=4190208 prot=0x4
+TEXT-DUMP out\text\text_03_71c0000_7ff000_function.bin score=5 cjk=39 region=8384512 prot=0x4
+TEXT-DUMP out\text\text_04_79c0000_800000_DOCTYPE.bin score=4 cjk=1 region=16576512 prot=0x4
+TEXT-DUMP out\text\text_05_8990000_54d000_function.bin score=5 cjk=51 region=5558272 prot=0x4
+TEXT-DUMP out\text\text_06_7ff87f3d5000_209000_html.bin score=9 cjk=127 region=2134016 prot=0x2
+TEXT-DUMP out\text\text_07_7ff87f95a000_800000_html.bin score=9 cjk=6039 region=8892416 prot=0x8
+TEXT-DUMP out\text\text_08_7ff893e0e000_65000_style.bin score=4 cjk=77 region=413696 prot=0x2
+TEXT-DUMP out\text\text_09_7ff8afbd7000_76000_DOCTYPE.bin score=12 cjk=2183 region=483328 prot=0x2
+TEXT-DUMP out\text\text_10_7ff8b69d8000_99000_DOCTYPE.bin score=12 cjk=2197 region=626688 prot=0x2
+text hunt: scanned 828 regions, dumped 11
+
+== pe-sieve pid 9652 ==
+PID: 9652
+Output filter: no filter: dump everything (default)
+Dump mode: realigned raw (converted raw format to be the same as virtual)
+[*] Using raw process!
+[*] Scanning: D:\a\action-ipadown\action-ipadown\work\target.exe
+[*] Scanning: C:\Windows\System32\ntdll.dll
+[*] Scanning: C:\Windows\System32\kernel32.dll
+[*] Scanning: C:\Windows\System32\KERNELBASE.dll
+[*] Scanning: C:\Windows\System32\apphelp.dll
+[*] Scanning: C:\Windows\System32\user32.dll
+[*] Scanning: C:\Windows\System32\win32u.dll
+[*] Scanning: C:\Windows\System32\IPHLPAPI.DLL
+[*] Scanning: C:\Windows\System32\gdi32.dll
+[*] Scanning: C:\Windows\System32\ucrtbase.dll
+[*] Scanning: C:\Windows\System32\gdi32full.dll
+[*] Scanning: C:\Windows\System32\msvcp_win.dll
+[*] Scanning: C:\Windows\System32\advapi32.dll
+[*] Scanning: C:\Windows\System32\msvcrt.dll
+[*] Scanning: C:\Windows\System32\sechost.dll
+[*] Scanning: C:\Windows\System32\rpcrt4.dll
+[*] Scanning: C:\Windows\System32\shell32.dll
+[*] Scanning: C:\Windows\System32\WinTypes.dll
+[*] Scanning: C:\Windows\System32\combase.dll
+[*] Scanning: C:\Windows\System32\ole32.dll
+[*] Scanning: C:\Windows\System32\oleaut32.dll
+[*] Scanning: C:\Windows\System32\imm32.dll
+[*] Scanning: C:\Windows\System32\wtsapi32.dll
+[*] Scanning: C:\Windows\System32\ws2_32.dll
+[*] Scanning: C:\Windows\System32\uxtheme.dll
+[*] Scanning: C:\Windows\System32\dwmapi.dll
+[*] Scanning: C:\Windows\System32\crypt32.dll
+[*] Scanning: C:\Windows\System32\shlwapi.dll
+[*] Scanning: C:\Windows\System32\sspicli.dll
+[*] Scanning: C:\Windows\System32\userenv.dll
+[*] Scanning: C:\Windows\System32\version.dll
+[*] Scanning: C:\Windows\System32\netapi32.dll
+[*] Scanning: C:\Windows\System32\winmm.dll
+[*] Scanning: C:\Windows\System32\secur32.dll
+[*] Scanning: C:\Windows\System32\wininet.dll
+[*] Scanning: C:\Windows\System32\urlmon.dll
+killed pid 9652
+dumps: 47 files

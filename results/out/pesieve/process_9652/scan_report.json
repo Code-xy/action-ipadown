@@ -1,0 +1,53 @@
+ {
+  "pid" : 9652,
+  "is_64_bit" : 1,
+  "is_managed" : 0,
+  "main_image_path" : "D:\\a\\action-ipadown\\action-ipadown\\work\\target.exe",
+  "used_reflection" : 0,
+  "scanner_version" : "0.4.1.1",
+  "scanned" : 
+  {
+   "total" : 36,
+   "skipped" : 0,
+   "modified" : 
+   {
+    "total" : 2,
+    "patched" : 1,
+    "iat_hooked" : 0,
+    "replaced" : 0,
+    "hdr_modified" : 1,
+    "implanted_pe" : 0,
+    "implanted_shc" : 0,
+    "unreachable_file" : 0,
+    "other" : 0
+   },
+   "errors" : 0
+  },
+  "scans" : [
+   {
+    "headers_scan" : {
+     "status" : 1,
+     "module" : "140000000",
+     "module_size" : "3121000",
+     "module_file" : "D:\\a\\action-ipadown\\action-ipadown\\work\\target.exe",
+     "is_connected_to_peb" : 1,
+     "is_pe_replaced" : 0,
+     "dos_hdr_modified" : 0,
+     "file_hdr_modified" : 0,
+     "nt_hdr_modified" : 0,
+     "ep_modified" : 0,
+     "sec_hdr_modified" : 0
+    }
+   },
+   {
+    "code_scan" : {
+     "status" : 1,
+     "module" : "140000000",
+     "module_size" : "3121000",
+     "module_file" : "D:\\a\\action-ipadown\\action-ipadown\\work\\target.exe",
+     "scanned_sections" : 2,
+     "unpacked_sections" : 1
+    }
+   }
+  ]
+ }

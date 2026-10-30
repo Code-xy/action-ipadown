@@ -1,0 +1,8 @@
+MOD-FILE  D:\a\action-ipadown\action-ipadown\work\target.exe  base=0x140000000  memsize=51515392
+MOD-MEM   out\mods\mem_target.exe.bin (size=51515392)
+MOD-FILE  C:\Users\RUNNER~1\AppData\Local\Temp\1132655976\ui.dll  base=0x7ff87f930000  memsize=9109504
+MOD-MEM   out\mods\mem_ui.dll.bin (size=9109504)
+MOD-FILE  C:\Users\RUNNER~1\AppData\Local\Temp\1132655976\uimod.dll  base=0x7ff87ee10000  memsize=11649024
+MOD-MEM   out\mods\mem_uimod.dll.bin (size=11649024)
+TMP-FILE  C:\Users\runneradmin\AppData\Local\Temp\1132655976\ui.dll -> out\mods\tmp_1132655976\ui.dll size=9072128
+TMP-FILE  C:\Users\runneradmin\AppData\Local\Temp\1132655976\uimod.dll -> out\mods\tmp_1132655976\uimod.dll size=8892416

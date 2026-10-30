@@ -1,0 +1,13 @@
+TEXT-DUMP out\text\text_00_4810000_ff000_doctype.bin score=12 cjk=85 region=1044480 prot=0x4
+TEXT-DUMP out\text\text_01_6bc0000_1ff000_function.bin score=6 cjk=46 region=2093056 prot=0x4
+TEXT-DUMP out\text\text_02_6dc0000_3ff000_function.bin score=5 cjk=875 region=4190208 prot=0x4
+TEXT-DUMP out\text\text_03_71c0000_7ff000_function.bin score=5 cjk=39 region=8384512 prot=0x4
+TEXT-DUMP out\text\text_04_79c0000_800000_DOCTYPE.bin score=4 cjk=1 region=16576512 prot=0x4
+TEXT-DUMP out\text\text_05_8990000_54d000_function.bin score=5 cjk=51 region=5558272 prot=0x4
+TEXT-DUMP out\text\text_06_7ff87f3d5000_209000_html.bin score=9 cjk=127 region=2134016 prot=0x2
+TEXT-DUMP out\text\text_07_7ff87f95a000_800000_html.bin score=9 cjk=6039 region=8892416 prot=0x8
+TEXT-DUMP out\text\text_08_7ff893e0e000_65000_style.bin score=4 cjk=77 region=413696 prot=0x2
+TEXT-DUMP out\text\text_09_7ff8afbd7000_76000_DOCTYPE.bin score=12 cjk=2183 region=483328 prot=0x2
+TEXT-DUMP out\text\text_10_7ff8b69d8000_99000_DOCTYPE.bin score=12 cjk=2197 region=626688 prot=0x2
+text hunt: scanned 828 regions, dumped 11
+
